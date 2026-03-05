@@ -1,13 +1,8 @@
-# https://www.robotstxt.org/robotstxt.html
+# Robots.txt for SaudiSaaSHub
+
 User-agent: *
 Allow: /
 
-# Sitemaps
-Sitemap: https://saudisaashub.com/sitemap.xml
-Sitemap: https://saudisaashub.com/sitemap-articles.xml
+Sitemap: https://saudisaashub-website.vercel.app/sitemap.xml
 
-# Feed
-Allow: /feed.xml
-
-# Crawl-delay
-Crawl-delay: 1
+# Crawl-delay: 1
