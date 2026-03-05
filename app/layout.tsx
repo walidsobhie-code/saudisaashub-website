@@ -8,10 +8,10 @@ import { BackToTop } from '@/components/BackToTop';
 
 export const metadata: Metadata = {
   title: {
-    default: 'SaudiSaaSHub - المصدرك الأول لـ SaaS في المملكة العربية السعودية',
+    default: 'SaudiSaaSHub | مصدرك الأول لأخبار SaaS في السعودية',
     template: '%s | SaudiSaaSHub',
   },
-  description: 'المصدرك الأول لأحدث أخبار وتقارير SaaS والشركات الناشئة في المملكة العربية السعودية. نقدم تحليلات السوق الشاملة، مراجعات الشركات التقنية، وأدلة عملية لنمو الأعمال والوصول للتحول الرقمي.',
+  description: 'مصدرك الأول لأحدث أخبار وتقارير SaaS والشركات الناشئة في المملكة العربية السعودية. نقدم تحليلات السوق الشاملة، مراجعات الشركات التقنية، وأدلة عملية لنمو الأعمال والوصول للتحول الرقمي.',
   keywords: ['SaaS', 'startup', 'السعودية', 'التقنية', 'الأعمال', 'الفوترة الإلكترونية', 'ZATCA', 'PDPL', 'التحول الرقمي', 'رؤية 2030', 'SaaS السعودية', 'شركات ناشئة'],
   authors: [{ name: 'SaudiSaaSHub Team' }],
   creator: 'SaudiSaaSHub',
@@ -21,37 +21,37 @@ export const metadata: Metadata = {
     address: false,
     telephone: false,
   },
-  metadataBase: new URL('https://f35cdfe3.f249971c.saudisaashub.pages.dev'),
+  metadataBase: new URL('https://3250d70c.saudisaashub.pages.dev'),
   alternates: {
-    canonical: 'https://f35cdfe3.f249971c.saudisaashub.pages.dev',
+    canonical: 'https://3250d70c.saudisaashub.pages.dev',
     languages: {
-      'ar': 'https://f35cdfe3.f249971c.saudisaashub.pages.dev',
-      'en': 'https://f35cdfe3.f249971c.saudisaashub.pages.dev/en',
+      'ar': 'https://3250d70c.saudisaashub.pages.dev',
+      'en': 'https://3250d70c.saudisaashub.pages.dev/en',
     },
   },
   openGraph: {
-    title: 'SaudiSaaSHub - المصدرك الأول لـ SaaS في المملكة العربية السعودية',
-    description: 'المصدرك الأول لأحدث أخبار وتقارير SaaS والشركات الناشئة في المملكة العربية السعودية. تحليلات السوق الشاملة، مراجعات الشركات التقنية، وأدلة عملية لنمو الأعمال.',
-    url: 'https://f35cdfe3.f249971c.saudisaashub.pages.dev',
+    title: 'SaudiSaaSHub - مصدرك الأول لـ SaaS في المملكة العربية السعودية',
+    description: 'مصدرك الأول لأحدث أخبار وتقارير SaaS والشركات الناشئة في المملكة العربية السعودية. تحليلات السوق الشاملة، مراجعات الشركات التقنية، وأدلة عملية لنمو الأعمال.',
+    url: 'https://3250d70c.saudisaashub.pages.dev',
     siteName: 'SaudiSaaSHub',
     locale: 'ar_SA',
     alternateLocale: 'en_US',
     type: 'website',
     images: [
       {
-        url: 'https://f35cdfe3.f249971c.saudisaashub.pages.dev/logo.png',
+        url: 'https://3250d70c.saudisaashub.pages.dev/logo.png',
         width: 1200,
         height: 630,
-        alt: 'SaudiSaaSHub - المصدرك الأول لـ SaaS في المملكة',
+        alt: 'SaudiSaaSHub - مصدرك الأول لـ SaaS في المملكة',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'SaudiSaaSHub - المصدرك الأول لـ SaaS في المملكة',
-    description: 'المصدرك الأول لأحدث أخبار وتقارير SaaS والشركات الناشئة في المملكة العربية السعودية.',
+    title: 'SaudiSaaSHub - مصدرك الأول لـ SaaS في المملكة',
+    description: 'مصدرك الأول لأحدث أخبار وتقارير SaaS والشركات الناشئة في المملكة العربية السعودية.',
     creator: '@SaudiSaaSHub',
-    images: ['https://f35cdfe3.f249971c.saudisaashub.pages.dev/logo.png'],
+    images: ['https://3250d70c.saudisaashub.pages.dev/logo.png'],
   },
   robots: {
     index: true,
@@ -85,8 +85,8 @@ export default function RootLayout({
         
         {/* Explicit meta tags for LinkedIn */}
         <meta name="author" content="SaudiSaaSHub Team" />
-        <meta name="image" content="https://f35cdfe3.f249971c.saudisaashub.pages.dev/logo.png" />
-        <meta property="og:image" content="https://f35cdfe3.f249971c.saudisaashub.pages.dev/logo.png" />
+        <meta name="image" content="https://3250d70c.saudisaashub.pages.dev/logo.png" />
+        <meta property="og:image" content="https://3250d70c.saudisaashub.pages.dev/logo.png" />
         <meta property="og:image:width" content="1200" />
         <meta property="og:image:height" content="630" />
       </head>

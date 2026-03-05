@@ -3,7 +3,7 @@ import { VerifiedBadge } from '@/components/VerifiedBadge';
 
 export const metadata = {
   title: 'عن المنصة - SaudiSaaSHub',
-  description: 'تعرف على SaudiSaaSHub - المصدرك الأول لـ SaaS في المملكة العربية السعودية',
+  description: 'تعرف على SaudiSaaSHub - مصدرك الأول لـ SaaS في المملكة العربية السعودية',
 };
 
 export default function AboutPage() {
@@ -22,7 +22,7 @@ export default function AboutPage() {
           </div>
 
           <p className="text-xl text-text-secondary max-w-2xl mx-auto">
-            المصدرك الأول لأحدث أخبار التقنية والأعمال في المملكة العربية السعودية
+            مصدرك الأول لأحدث أخبار التقنية والأعمال في المملكة العربية السعودية
           </p>
         </div>
       </section>

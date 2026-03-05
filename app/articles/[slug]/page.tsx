@@ -153,7 +153,7 @@ export default async function ArticlePage({ params }: PageProps) {
                   <h3 className="text-lg font-semibold text-white mb-4">مشاركة المقال</h3>
                   <ShareButtons
                     title={article.title}
-                    url={`https://f35cdfe3.f249971c.saudisaashub.pages.dev/articles/${article.slug}`}
+                    url={`https://3250d70c.saudisaashub.pages.dev/articles/${article.slug}`}
                   />
                 </div>
                 <VerifiedContentBadge />

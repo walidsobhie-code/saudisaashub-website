@@ -36,7 +36,7 @@ export function Footer() {
               </span>
             </Link>
             <p className="text-text-secondary text-sm mb-6">
-              المصدرك الأول لأحدث أخبار التقنية والأعمال في المملكة العربية السعودية
+              مصدرك الأول لأحدث أخبار التقنية والأعمال في المملكة العربية السعودية
             </p>
             <div className="flex items-center gap-4">
               {socialLinks.map((social) => (

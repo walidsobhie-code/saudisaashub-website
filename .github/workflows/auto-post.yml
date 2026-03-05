@@ -5,35 +5,28 @@ on:
     - cron: '0 */6 * * *'
   workflow_dispatch:
   repository_dispatch:
-    types: [update-social]
+    types: [post-article]
 
 jobs:
   post-to-telegram:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-      
       - name: Post to Telegram
         run: |
-          ARTICLE_TITLE="سوق البرمجيات السحابية في المملكة"
-          ARTICLE_SLUG="saas-market-saudi-arabia-2026"
-          ARTICLE_EXCERPT="يُتوقع أن يصل حجم سوق SaaS في المملكة إلى 6.49 مليار دولار."
-          SITE_URL="https://saudisaashub.pages.dev"
-          
           BOT_TOKEN="${{ secrets.TELEGRAM_BOT_TOKEN }}"
-          CHAT_ID="7293624236"
+          CHAT_ID="${{ secrets.TELEGRAM_CHAT_ID }}"
+          SITE_URL="https://saudisaashub.pages.dev"
           
           HOOKS=("وش رايك؟ 🤔" "هل سمعت عن هذا؟ 🤨" "والله تستاهل! 🙌")
           HOOK=${HOOKS[$((RANDOM % 3))]}
           
           MESSAGE="${HOOK}
 
-${ARTICLE_TITLE}
+سوق البرمجيات السحابية في المملكة
 
-📝 ${ARTICLE_EXCERPT}
+يُتوقع ان يصل حجم سوق SaaS في المملكة الى 6.49 مليار دولار.
 
-👇 ${SITE_URL}/articles/${ARTICLE_SLUG}
+👇 ${SITE_URL}/articles/saas-market-saudi-arabia-2026
 
 #SaudiSaaS #السعودية #التقنية"
           
@@ -42,6 +35,7 @@ ${ARTICLE_TITLE}
             -d "text=${MESSAGE}" \
             -d "parse_mode=Markdown"
           
-          echo "✅ Done!"
+          echo "Done!"
         env:
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}

@@ -2,6 +2,7 @@
 
 import Link from 'next/link';
 import { useEffect, useState, useRef } from 'react';
+import { articles as allArticles } from '../lib/articles-data';
 
 interface Article {
   title: string;
@@ -164,16 +165,7 @@ function Hero() {
 }
 
 export default function Home() {
-  const [articles, setArticles] = useState<Article[]>([]);
-  const [loading, setLoading] = useState(true);
-
-  useEffect(() => {
-    fetch('/api/search')
-      .then(res => res.json())
-      .then(data => { setArticles(data.articles || []); setLoading(false); })
-      .catch(() => setLoading(false));
-  }, []);
-
+  const articles = allArticles;
   const featuredArticles = articles.slice(0, 6);
 
   return (
@@ -208,7 +200,7 @@ export default function Home() {
             <h2 className="text-3xl md:text-5xl font-bold text-white mb-4">
               استكشف حسب <span className="bg-gradient-to-r from-emerald-400 via-purple-400 to-pink-500 bg-clip-text text-transparent">القطاع</span>
             </h2>
-            <p className="text-white/40 text-lg max-w-xl mx-auto">اختر Sectorالم Interesse للمقالات المتخصصة</p>
+            <p className="text-white/40 text-lg max-w-xl mx-auto">اختر القطاع لعرض المقالات المتخصصة</p>
           </div>
 
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
@@ -252,7 +244,7 @@ export default function Home() {
             </Link>
           </div>
 
-          {loading ? (
+          {articles.length === 0 ? (
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               {[...Array(6)].map((_, i) => (<div key={i} className="animate-pulse"><div className="bg-white/[0.02] rounded-2xl border border-white/5 p-6"><div className="h-4 bg-white/10 rounded w-1/3 mb-4" /><div className="h-6 bg-white/10 rounded w-3/4 mb-2" /><div className="h-4 bg-white/10 rounded w-1/2" /></div></div>))}
             </div>
