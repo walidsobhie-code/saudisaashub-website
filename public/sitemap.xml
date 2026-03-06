@@ -1,39 +1,43 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://saudisaashub-website.vercel.app/</loc>
-    <changefreq>weekly</changefreq>
+    <loc>https://saudisaashub.pages.dev/</loc>
+    <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://saudisaashub-website.vercel.app/articles</loc>
+    <loc>https://saudisaashub.pages.dev/articles/</loc>
     <changefreq>daily</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://saudisaashub-website.vercel.app/about</loc>
+    <loc>https://saudisaashub.pages.dev/about/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://saudisaashub.pages.dev/contact/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://saudisaashub-website.vercel.app/contact</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://saudisaashub-website.vercel.app/saas-market-saudi-arabia-2026</loc>
+    <loc>https://saudisaashub.pages.dev/saas-market-saudi-arabia-2026/</loc>
+    <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://saudisaashub-website.vercel.app/tech-giants-saudi-market-2026</loc>
+    <loc>https://saudisaashub.pages.dev/tech-giants-saudi-market-2026/</loc>
+    <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://saudisaashub-website.vercel.app/cybersecurity-saudi-arabia-2026</loc>
+    <loc>https://saudisaashub.pages.dev/cybersecurity-saudi-arabia-2026/</loc>
+    <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://saudisaashub-website.vercel.app/digital-health-saudi-2026</loc>
+    <loc>https://saudisaashub.pages.dev/digital-health-saudi-2026/</loc>
+    <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
 </urlset>

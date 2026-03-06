@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0" xmlns:excerpt="http://wordpress.org/export/1.2/excerpt/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:wfw="http://wellformedweb.org/CommentAPI/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:wp="http://wordpress.org/export/1.2/">
-  <channel title="SaudiSaaSHub" link="https://saudisaashub.com" description="مصدرك الأول لأحدث أخبار التقنية والأعمال في المملكة العربية السعودية" pubDate="Wed, 04 Mar 2026 19:00:00 +0000" language="ar" wp:wxr_version="1.2" wp:base_site_url="https://saudisaashub.com" wp:base_blog_url="https://saudisaashub.com">
+  <channel title="SaudiSaaSHub" link="https://saudisaashub.pages.dev" description="مصدرك الأول لأحدث أخبار التقنية والأعمال في المملكة العربية السعودية" pubDate="Wed, 04 Mar 2026 19:00:00 +0000" language="ar" wp:wxr_version="1.2" wp:base_site_url="https://saudisaashub.pages.dev" wp:base_blog_url="https://saudisaashub.pages.dev">
     
     <!-- Article 1: سوق SaaS -->
     <item>
       <title>سوق البرمجيات السحابية في المملكة — وين وصل وإلى وين رايح؟</title>
-      <link>https://saudisaashub.com/saas-market-saudi-arabia-2026</link>
+      <link>https://saudisaashub.pages.dev/saas-market-saudi-arabia-2026</link>
       <pubDate>Wed, 04 Mar 2026 10:00:00 +0000</pubDate>
       <dc:creator>SaudiSaaSHub Team</dc:creator>
       <content:encoded><![CDATA[<h1>سوق البرمجيات السحابية في المملكة — وين وصل وإلى وين رايح؟</h1>
@@ -35,7 +35,7 @@
     <!-- Article 2: عمالقة التقنية -->
     <item>
       <title>لماذا تتسابق عمالقة التقنية للدخول إلى السوق السعودي؟</title>
-      <link>https://saudisaashub.com/tech-giants-saudi-market-2026</link>
+      <link>https://saudisaashub.pages.dev/tech-giants-saudi-market-2026</link>
       <pubDate>Wed, 04 Mar 2026 11:00:00 +0000</pubDate>
       <dc:creator>SaudiSaaSHub Team</dc:creator>
       <content:encoded><![CDATA[<h1>لماذا تتسابق عمالقة التقنية للدخول إلى السوق السعودي؟</h1>
@@ -63,7 +63,7 @@
     <!-- Article 3: المنشآت الصغيرة -->
     <item>
       <title>المنشآت الصغيرة والمتوسطة والكلاود — علاقة في بدايتها وفرصة لا تُعوَّض</title>
-      <link>https://saudisaashub.com/sme-cloud-adoption-saudi-2026</link>
+      <link>https://saudisaashub.pages.dev/sme-cloud-adoption-saudi-2026</link>
       <pubDate>Wed, 04 Mar 2026 12:00:00 +0000</pubDate>
       <dc:creator>SaudiSaaSHub Team</dc:creator>
       <content:encoded><![CDATA[<h1>المنشآت الصغيرة والمتوسطة والكلاود</h1>
@@ -93,7 +93,7 @@
     <!-- Article 4: شركات ناشئة -->
     <item>
       <title>أبرز شركات SaaS الناشئة في المملكة العربية السعودية لعام 2026</title>
-      <link>https://saudisaashub.com/top-saas-startups-saudi-2026</link>
+      <link>https://saudisaashub.pages.dev/top-saas-startups-saudi-2026</link>
       <pubDate>Wed, 04 Mar 2026 13:00:00 +0000</pubDate>
       <dc:creator>SaudiSaaSHub Team</dc:creator>
       <content:encoded><![CDATA[<h1>أبرز شركات SaaS الناشئة في المملكة 2026</h1>
@@ -124,7 +124,7 @@
     <!-- Article 5: كيف تطلق شركة -->
     <item>
       <title>كيف تطلق شركة SaaS ناجحة في السعودية؟ — دليل المؤسسين 2026</title>
-      <link>https://saudisaashub.com/launch-saas-company-saudi-2026</link>
+      <link>https://saudisaashub.pages.dev/launch-saas-company-saudi-2026</link>
       <pubDate>Wed, 04 Mar 2026 14:00:00 +0000</pubDate>
       <dc:creator>SaudiSaaSHub Team</dc:creator>
       <content:encoded><![CDATA[<h1>كيف تطلق شركة SaaS ناجحة في السعودية؟</h1>
@@ -153,7 +153,7 @@
     <!-- Article 6: PDPL -->
     <item>
       <title>نظام حماية البيانات الشخصية (PDPL) — ما يجب أن يعرفه كل مزوّد SaaS</title>
-      <link>https://saudisaashub.com/pdpl-guide-saudi-2026</link>
+      <link>https://saudisaashub.pages.dev/pdpl-guide-saudi-2026</link>
       <pubDate>Wed, 04 Mar 2026 15:00:00 +0000</pubDate>
       <dc:creator>SaudiSaaSHub Team</dc:creator>
       <content:encoded><![CDATA[<h1>نظام حماية البيانات الشخصية (PDPL)</h1>
@@ -180,7 +180,7 @@
     <!-- Article 7: PDPL فرق -->
     <item>
       <title>الفرق بين شركة SaaS تحترم PDPL وشركة تُخاطر بغرامات مليونية</title>
-      <link>https://saudisaashub.com/pdpl-compliance-vs-fines-2026</link>
+      <link>https://saudisaashub.pages.dev/pdpl-compliance-vs-fines-2026</link>
       <pubDate>Wed, 04 Mar 2026 16:00:00 +0000</pubDate>
       <dc:creator>SaudiSaaSHub Team</dc:creator>
       <content:encoded><![CDATA[<h1>PDPL: الامتثال مقابل الغرامات</h1>
@@ -213,7 +213,7 @@
     <!-- Article 8: ZATCA -->
     <item>
       <title>فاتورة إلكترونية ٢٠٢٦ — كل ما تحتاج معرفته قبل ما يغرّمونك</title>
-      <link>https://saudisaashub.com/zatca-e-invoice-2026</link>
+      <link>https://saudisaashub.pages.dev/zatca-e-invoice-2026</link>
       <pubDate>Wed, 04 Mar 2026 17:00:00 +0000</pubDate>
       <dc:creator>SaudiSaaSHub Team</dc:creator>
       <content:encoded><![CDATA[<h1>فاتورة إلكترونية ٢٠٢٦</h1>
@@ -248,7 +248,7 @@
     <!-- Article 9: برامج الفوترة -->
     <item>
       <title>أفضل برامج SaaS للفاتورة الإلكترونية المتوافقة مع زاتكا 2026</title>
-      <link>https://saudisaashub.com/zatca-software-reviews-2026</link>
+      <link>https://saudisaashub.pages.dev/zatca-software-reviews-2026</link>
       <pubDate>Wed, 04 Mar 2026 18:00:00 +0000</pubDate>
       <dc:creator>SaudiSaaSHub Team</dc:creator>
       <content:encoded><![CDATA[<h1>أفضل برامج الفوترة الإلكترونية المتوافقة مع زاتكا</h1>
@@ -285,7 +285,7 @@
     <!-- Article 10: التكامل -->
     <item>
       <title>الدليل الشامل للتكامل مع منصة فاتورة — من الصفر للامتثال الكامل</title>
-      <link>https://saudisaashub.com/zatca-integration-guide-2026</link>
+      <link>https://saudisaashub.pages.dev/zatca-integration-guide-2026</link>
       <pubDate>Wed, 04 Mar 2026 19:00:00 +0000</pubDate>
       <dc:creator>SaudiSaaSHub Team</dc:creator>
       <content:encoded><![CDATA[<h1>دليل التكامل مع منصة فاتورة</h1>
