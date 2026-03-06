@@ -3,6 +3,6 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://3250d70c.saudisaashub.pages.dev/sitemap.xml
+Sitemap: https://saudisaashub.pages.dev/sitemap.xml
 
 # Crawl-delay: 1

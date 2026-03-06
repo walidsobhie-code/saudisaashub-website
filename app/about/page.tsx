@@ -1,9 +1,19 @@
 import Link from 'next/link';
 import { VerifiedBadge } from '@/components/VerifiedBadge';
+import type { Metadata } from 'next';
 
-export const metadata = {
+export const metadata: Metadata = {
   title: 'عن المنصة - SaudiSaaSHub',
-  description: 'تعرف على SaudiSaaSHub - مصدرك الأول لـ SaaS في المملكة العربية السعودية',
+  description: 'تعرف على SaudiSaaSHub - مصدرك الأول لـ SaaS في المملكة العربية السعودية. نقدم تحليلات السوق الشاملة، مراجعات الشركات التقنية، وأدلة عملية لنمو الأعمال.',
+  alternates: {
+    canonical: 'https://saudisaashub.pages.dev/about',
+  },
+  openGraph: {
+    title: 'عن المنصة - SaudiSaaSHub',
+    description: 'تعرف على SaudiSaaSHub - مصدرك الأول لـ SaaS في المملكة العربية السعودية',
+    url: 'https://saudisaashub.pages.dev/about',
+    type: 'website',
+  },
 };
 
 export default function AboutPage() {

@@ -30,14 +30,40 @@ export async function generateMetadata({ params }: PageProps) {
     return { title: 'المقال غير موجود - SaudiSaaSHub' };
   }
 
+  const articleUrl = `https://saudisaashub.pages.dev/articles/${article.slug}`;
+
   return {
-    title: `${article.title} | SaudiSaaSHub`,
+    title: article.title,
     description: article.excerpt,
+    keywords: article.categories.join(', '),
+    authors: [{ name: 'SaudiSaaSHub Team' }],
     openGraph: {
       title: article.title,
       description: article.excerpt,
+      url: articleUrl,
       type: 'article',
       publishedTime: article.date,
+      modifiedTime: article.date,
+      authors: ['SaudiSaaSHub Team'],
+      section: article.categories[0],
+      tags: article.categories,
+      images: [
+        {
+          url: `https://saudisaashub.pages.dev/og-image.png`,
+          width: 1200,
+          height: 630,
+          alt: article.title,
+        },
+      ],
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: article.title,
+      description: article.excerpt,
+      images: [`https://saudisaashub.pages.dev/og-image.png`],
+    },
+    alternates: {
+      canonical: articleUrl,
     },
   };
 }
@@ -153,7 +179,7 @@ export default async function ArticlePage({ params }: PageProps) {
                   <h3 className="text-lg font-semibold text-white mb-4">مشاركة المقال</h3>
                   <ShareButtons
                     title={article.title}
-                    url={`https://3250d70c.saudisaashub.pages.dev/articles/${article.slug}`}
+                    url={`https://saudisaashub.pages.dev/articles/${article.slug}`}
                   />
                 </div>
                 <VerifiedContentBadge />

@@ -1,6 +1,15 @@
 'use client';
 
 import { useState } from 'react';
+import { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'تواصل معنا - SaudiSaaSHub',
+  description: 'تواصل مع منصة SaudiSaaSHub للاستفسارات والشراكات والمساهمة في المحتوى. نحب أن نسمع منك!',
+  alternates: {
+    canonical: 'https://saudisaashub.pages.dev/contact',
+  },
+};
 
 export default function ContactPage() {
   const [formData, setFormData] = useState({

@@ -21,25 +21,25 @@ export const metadata: Metadata = {
     address: false,
     telephone: false,
   },
-  metadataBase: new URL('https://3250d70c.saudisaashub.pages.dev'),
+  metadataBase: new URL('https://saudisaashub.pages.dev'),
   alternates: {
-    canonical: 'https://3250d70c.saudisaashub.pages.dev',
+    canonical: 'https://saudisaashub.pages.dev',
     languages: {
-      'ar': 'https://3250d70c.saudisaashub.pages.dev',
-      'en': 'https://3250d70c.saudisaashub.pages.dev/en',
+      'ar': 'https://saudisaashub.pages.dev',
+      'en': 'https://saudisaashub.pages.dev/en',
     },
   },
   openGraph: {
     title: 'SaudiSaaSHub - مصدرك الأول لـ SaaS في المملكة العربية السعودية',
     description: 'مصدرك الأول لأحدث أخبار وتقارير SaaS والشركات الناشئة في المملكة العربية السعودية. تحليلات السوق الشاملة، مراجعات الشركات التقنية، وأدلة عملية لنمو الأعمال.',
-    url: 'https://3250d70c.saudisaashub.pages.dev',
+    url: 'https://saudisaashub.pages.dev',
     siteName: 'SaudiSaaSHub',
     locale: 'ar_SA',
     alternateLocale: 'en_US',
     type: 'website',
     images: [
       {
-        url: 'https://3250d70c.saudisaashub.pages.dev/logo.png',
+        url: 'https://saudisaashub.pages.dev/og-image.png',
         width: 1200,
         height: 630,
         alt: 'SaudiSaaSHub - مصدرك الأول لـ SaaS في المملكة',
@@ -51,7 +51,7 @@ export const metadata: Metadata = {
     title: 'SaudiSaaSHub - مصدرك الأول لـ SaaS في المملكة',
     description: 'مصدرك الأول لأحدث أخبار وتقارير SaaS والشركات الناشئة في المملكة العربية السعودية.',
     creator: '@SaudiSaaSHub',
-    images: ['https://3250d70c.saudisaashub.pages.dev/logo.png'],
+    images: ['https://saudisaashub.pages.dev/og-image.png'],
   },
   robots: {
     index: true,
@@ -71,9 +71,42 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
+  const jsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'WebSite',
+    name: 'SaudiSaaSHub',
+    alternateName: 'سعودي ساس هب',
+    url: 'https://saudisaashub.pages.dev',
+    description: 'مصدرك الأول لأحدث أخبار وتقارير SaaS والشركات الناشئة في المملكة العربية السعودية',
+    publisher: {
+      '@type': 'Organization',
+      name: 'SaudiSaaSHub',
+      logo: {
+        '@type': 'ImageObject',
+        url: 'https://saudisaashub.pages.dev/logo.png',
+      },
+    },
+    potentialAction: {
+      '@type': 'SearchAction',
+      target: {
+        '@type': 'EntryPoint',
+        urlTemplate: 'https://saudisaashub.pages.dev/articles?search={search_term_string}',
+      },
+      'query-input': 'required name=search_term_string',
+    },
+    sameAs: [
+      'https://twitter.com/SaudiSaaSHub',
+      'https://www.linkedin.com/company/saudisaashub',
+    ],
+  };
+
   return (
     <html lang="ar" dir="rtl">
       <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
         <link rel="icon" href="/favicon.ico" sizes="any" />
         <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
         <link rel="alternate" type="application/rss+xml" title="RSS Feed" href="/feed.xml" />
@@ -82,17 +115,17 @@ export default function RootLayout({
         <meta name="apple-mobile-web-app-capable" content="yes" />
         <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
         <meta name="apple-mobile-web-app-title" content="SaudiSaaS" />
-        
+
         {/* Explicit meta tags for LinkedIn */}
         <meta name="author" content="SaudiSaaSHub Team" />
-        <meta name="image" content="https://3250d70c.saudisaashub.pages.dev/logo.png" />
-        <meta property="og:image" content="https://3250d70c.saudisaashub.pages.dev/logo.png" />
+        <meta name="image" content="https://saudisaashub.pages.dev/og-image.png" />
+        <meta property="og:image" content="https://saudisaashub.pages.dev/og-image.png" />
         <meta property="og:image:width" content="1200" />
         <meta property="og:image:height" content="630" />
       </head>
       <body className="min-h-screen flex flex-col">
         <a href="#main-content" className="sr-only focus:not-sr-only focus:absolute focus:top-2 focus:left-2 focus:z-50 focus:px-4 focus:py-2 focus:bg-accent-green focus:text-background">
-         _skip to content_
+          _skip to content_
         </a>
         <Header />
         <SearchModal />
