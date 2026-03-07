@@ -36,15 +36,6 @@ const categories = [
 
 function Hero() {
   const canvasRef = useRef<HTMLCanvasElement>(null);
-  const [currentHeadline, setCurrentHeadline] = useState(0);
-
-  // Rotate headlines
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentHeadline((prev) => (prev + 1) % rotatingHeadlines.length);
-    }, 4000);
-    return () => clearInterval(interval);
-  }, []);
 
   useEffect(() => {
     const canvas = canvasRef.current;
@@ -142,29 +133,6 @@ function Hero() {
           مصدرك الأول لأحدث أخبار التقنية والأعمال في المملكة العربية السعودية
         </p>
 
-        {/* Rotating Headlines */}
-        <div className="h-16 mb-10 flex items-center justify-center overflow-hidden">
-          {rotatingHeadlines.map((item, index) => (
-            <div
-              key={index}
-              className={`absolute transition-all duration-700 ease-in-out ${
-                index === currentHeadline
-                  ? 'opacity-100 translate-y-0'
-                  : 'opacity-0 translate-y-4'
-              }`}
-            >
-              <Link href="/articles" className="group">
-                <span className="inline-block px-4 py-1.5 rounded-full bg-emerald-500/20 border border-emerald-500/30 text-emerald-400 text-sm mb-2">
-                  {item.category}
-                </span>
-                <h2 className="text-2xl md:text-3xl font-bold text-white group-hover:text-emerald-400 transition-colors">
-                  {item.title}
-                </h2>
-              </Link>
-            </div>
-          ))}
-        </div>
-
         {/* CTA Buttons */}
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-12">
           <Link href="/articles" className="group px-8 py-4.5 rounded-2xl bg-gradient-to-r from-emerald-500 to-emerald-400 text-[#0A0A14] font-bold text-lg hover:shadow-[0_0_40px_rgba(16,185,129,0.4)] transition-all duration-300 hover:scale-105">
@@ -208,6 +176,15 @@ function Hero() {
 export default function Home() {
   const articles = allArticles;
   const featuredArticles = articles.slice(0, 6);
+  const [currentHeadline, setCurrentHeadline] = useState(0);
+
+  // Rotate headlines
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentHeadline((prev) => (prev + 1) % rotatingHeadlines.length);
+    }, 4000);
+    return () => clearInterval(interval);
+  }, []);
 
   return (
     <>
@@ -228,6 +205,59 @@ export default function Home() {
                 <div className="text-white/50 text-sm mt-1">{stat.label}</div>
               </div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Latest Articles Ticker */}
+      <section className="py-6 bg-white/[0.02] border-y border-white/5 overflow-hidden">
+        <div className="max-w-6xl mx-auto px-4">
+          <div className="flex items-center gap-8">
+            <span className="shrink-0 px-4 py-2 rounded-full bg-emerald-500/20 border border-emerald-500/30 text-emerald-400 text-sm font-bold">
+              جديد
+            </span>
+            <div className="flex-1 overflow-hidden">
+              <div className="flex animate-marquee gap-8">
+                {rotatingHeadlines.map((item, index) => (
+                  <Link
+                    key={index}
+                    href="/articles"
+                    className="flex items-center gap-3 whitespace-nowrap group"
+                  >
+                    <span className="text-white/40 text-sm">{item.category}</span>
+                    <span className="text-white font-medium group-hover:text-emerald-400 transition-colors">
+                      {item.title}
+                    </span>
+                  </Link>
+                ))}
+              </div>
+            </div>
+            <Link href="/articles" className="shrink-0 text-emerald-400 hover:text-emerald-300 text-sm font-medium">
+              عرض الكل →
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* Latest Headlines Ticker */}
+      <section className="py-8 bg-white/[0.02] border-b border-white/5">
+        <div className="max-w-6xl mx-auto px-4">
+          <div className="flex items-center gap-4 overflow-hidden">
+            <span className="shrink-0 px-3 py-1 rounded-full bg-emerald-500/20 text-emerald-400 text-sm font-medium">جديد</span>
+            <div className="flex-1 relative h-10 overflow-hidden">
+              {rotatingHeadlines.map((item, index) => (
+                <Link
+                  key={index}
+                  href="/articles"
+                  className={`absolute inset-0 flex items-center gap-3 transition-all duration-700 ease-in-out ${
+                    index === currentHeadline ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-full'
+                  }`}
+                >
+                  <span className="text-white/40 text-sm shrink-0">{item.category}</span>
+                  <span className="text-white hover:text-emerald-400 transition-colors truncate">{item.title}</span>
+                </Link>
+              ))}
+            </div>
           </div>
         </div>
       </section>
