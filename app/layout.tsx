@@ -5,67 +5,81 @@ import { Footer } from '@/components/Footer';
 import { SearchModal } from '@/components/SearchModal';
 import { NewsletterPopup } from '@/components/NewsletterPopup';
 import { BackToTop } from '@/components/BackToTop';
+import { getArticles } from '@/lib/articles';
 
-export const metadata: Metadata = {
-  title: {
-    default: 'SaudiSaaSHub | مصدرك الأول لأخبار SaaS في السعودية',
-    template: '%s | SaudiSaaSHub',
-  },
-  description: 'مصدرك الأول لأحدث أخبار وتقارير SaaS والشركات الناشئة في المملكة العربية السعودية. نقدم تحليلات السوق الشاملة، مراجعات الشركات التقنية، وأدلة عملية لنمو الأعمال والوصول للتحول الرقمي.',
-  keywords: ['SaaS', 'startup', 'السعودية', 'التقنية', 'الأعمال', 'الفوترة الإلكترونية', 'ZATCA', 'PDPL', 'التحول الرقمي', 'رؤية 2030', 'SaaS السعودية', 'شركات ناشئة'],
-  authors: [{ name: 'SaudiSaaSHub Team' }],
-  creator: 'SaudiSaaSHub',
-  publisher: 'SaudiSaaSHub',
-  formatDetection: {
-    email: false,
-    address: false,
-    telephone: false,
-  },
-  metadataBase: new URL('https://saudisaashub.pages.dev'),
-  alternates: {
-    canonical: 'https://saudisaashub.pages.dev',
-    languages: {
-      'ar': 'https://saudisaashub.pages.dev',
-      'en': 'https://saudisaashub.pages.dev/en',
+export async function generateMetadata(): Promise<Metadata> {
+  const articles = await getArticles();
+  // Get the most recent article date for homepage metadata
+  const latestArticle = articles.sort((a, b) =>
+    new Date(b.date).getTime() - new Date(a.date).getTime()
+  )[0];
+  const latestDate = latestArticle?.date || new Date().toISOString();
+
+  return {
+    title: {
+      default: 'SaudiSaaSHub | مصدرك الأول لأخبار SaaS في السعودية',
+      template: '%s | SaudiSaaSHub',
     },
-  },
-  openGraph: {
-    title: 'SaudiSaaSHub - مصدرك الأول لـ SaaS في المملكة العربية السعودية',
-    description: 'مصدرك الأول لأحدث أخبار وتقارير SaaS والشركات الناشئة في المملكة العربية السعودية. تحليلات السوق الشاملة، مراجعات الشركات التقنية، وأدلة عملية لنمو الأعمال.',
-    url: 'https://saudisaashub.pages.dev',
-    siteName: 'SaudiSaaSHub',
-    locale: 'ar_SA',
-    alternateLocale: 'en_US',
-    type: 'website',
-    images: [
-      {
-        url: 'https://saudisaashub.pages.dev/og-image.png',
-        width: 1200,
-        height: 630,
-        alt: 'SaudiSaaSHub - مصدرك الأول لـ SaaS في المملكة',
+    description: 'مصدرك الأول لأحدث أخبار وتقارير SaaS والشركات الناشئة في المملكة العربية السعودية. نقدم تحليلات السوق الشاملة، مراجعات الشركات التقنية، وأدلة عملية لنمو الأعمال والوصول للتحول الرقمي.',
+    keywords: ['SaaS', 'startup', 'السعودية', 'التقنية', 'الأعمال', 'الفوترة الإلكترونية', 'ZATCA', 'PDPL', 'التحول الرقمي', 'رؤية 2030', 'SaaS السعودية', 'شركات ناشئة'],
+    authors: [{ name: 'SaudiSaaSHub Team' }],
+    creator: 'SaudiSaaSHub',
+    publisher: 'SaudiSaaSHub',
+    formatDetection: {
+      email: false,
+      address: false,
+      telephone: false,
+    },
+    metadataBase: new URL('https://saudisaashub.pages.dev'),
+    alternates: {
+      canonical: 'https://saudisaashub.pages.dev',
+      languages: {
+        'ar': 'https://saudisaashub.pages.dev',
+        'en': 'https://saudisaashub.pages.dev/en',
       },
-    ],
-  },
-  twitter: {
-    card: 'summary_large_image',
-    title: 'SaudiSaaSHub - مصدرك الأول لـ SaaS في المملكة',
-    description: 'مصدرك الأول لأحدث أخبار وتقارير SaaS والشركات الناشئة في المملكة العربية السعودية.',
-    creator: '@SaudiSaaSHub',
-    site: '@SaudiSaaSHub',
-    images: ['https://saudisaashub.pages.dev/og-image.png'],
-  },
-  robots: {
-    index: true,
-    follow: true,
-    googleBot: {
+    },
+    openGraph: {
+      title: 'SaudiSaaSHub - مصدرك الأول لـ SaaS في المملكة العربية السعودية',
+      description: 'مصدرك الأول لأحدث أخبار وتقارير SaaS والشركات الناشئة في المملكة العربية السعودية. تحليلات السوق الشاملة، مراجعات الشركات التقنية، وأدلة عملية لنمو الأعمال.',
+      url: 'https://saudisaashub.pages.dev',
+      siteName: 'SaudiSaaSHub',
+      locale: 'ar_SA',
+      alternateLocale: 'en_US',
+      type: 'website',
+      images: [
+        {
+          url: 'https://saudisaashub.pages.dev/og-image.png',
+          width: 1200,
+          height: 630,
+          alt: 'SaudiSaaSHub - مصدرك الأول لـ SaaS في المملكة',
+        },
+      ],
+    },
+    other: {
+      'article:published_time': latestDate,
+      'article:modified_time': latestDate,
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: 'SaudiSaaSHub - مصدرك الأول لـ SaaS في المملكة',
+      description: 'مصدرك الأول لأحدث أخبار وتقارير SaaS والشركات الناشئة في المملكة العربية السعودية.',
+      creator: '@SaudiSaaSHub',
+      site: '@SaudiSaaSHub',
+      images: ['https://saudisaashub.pages.dev/og-image.png'],
+    },
+    robots: {
       index: true,
       follow: true,
-      'max-video-preview': -1,
-      'max-image-preview': 'large',
-      'max-snippet': -1,
+      googleBot: {
+        index: true,
+        follow: true,
+        'max-video-preview': -1,
+        'max-image-preview': 'large',
+        'max-snippet': -1,
+      },
     },
-  },
-};
+  };
+}
 
 export default function RootLayout({
   children,

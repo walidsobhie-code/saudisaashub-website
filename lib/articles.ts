@@ -46,3 +46,15 @@ export function getAllCategories(): string[] {
   }
   return Array.from(categories).sort();
 }
+
+export function getLatestArticleDate(): string {
+  const { articles } = require('./articles-data');
+  if (!articles || articles.length === 0) {
+    return new Date().toISOString();
+  }
+  // Sort by date descending and return the latest
+  const sorted = [...articles].sort((a, b) =>
+    new Date(b.date).getTime() - new Date(a.date).getTime()
+  );
+  return sorted[0]?.date || new Date().toISOString();
+}
