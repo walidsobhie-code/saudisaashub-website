@@ -47,7 +47,7 @@ const events = [
   {
     id: 5,
     title: 'Digital Transformation Workshop',
-    ورشة عمل: 'ورشة عمل حول التحول الرقمي للشركات',
+    description: 'ورشة عمل حول التحول الرقمي للشركات',
     date: '20 أبريل 2026',
     location: 'الرياض - مركز واعد',
     category: 'ورشة عمل',
