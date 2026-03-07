@@ -375,7 +375,7 @@ export default function Home() {
             </Link>
           </div>
 
-          {articles.length === 0 ? (
+          {sortedArticles.length === 0 ? (
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               {[...Array(6)].map((_, i) => (<div key={i} className="animate-pulse"><div className="bg-white/[0.02] rounded-2xl border border-white/5 p-6"><div className="h-4 bg-white/10 rounded w-1/3 mb-4" /><div className="h-6 bg-white/10 rounded w-3/4 mb-2" /><div className="h-4 bg-white/10 rounded w-1/2" /></div></div>))}
             </div>
