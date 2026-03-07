@@ -46,8 +46,6 @@ export async function generateMetadata(): Promise<Metadata> {
       locale: 'ar_SA',
       alternateLocale: 'en_US',
       type: 'website',
-      publishedTime: latestDate,
-      modifiedTime: latestDate,
       images: [
         {
           url: 'https://saudisaashub.pages.dev/og-image.png',
