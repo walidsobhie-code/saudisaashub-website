@@ -409,6 +409,394 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      {/* Events Calendar Section */}
+      <section className="py-24 relative overflow-hidden bg-gradient-to-b from-[#0A0A14] via-[#0F0F1A] to-[#0A0A14]">
+        <div className="absolute inset-0">
+          <div className="absolute top-0 left-0 w-[600px] h-[600px] rounded-full blur-[180px] opacity-10 bg-gradient-to-r from-pink-500 to-purple-500" />
+          <div className="absolute bottom-0 right-0 w-[500px] h-[500px] rounded-full blur-[150px] opacity-10 bg-gradient-to-r from-emerald-500 to-cyan-500" />
+        </div>
+
+        <div className="max-w-7xl mx-auto px-4 relative z-10">
+          <div className="text-center mb-16">
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-pink-500/10 border border-pink-500/20 text-pink-400 text-sm mb-4">
+              <span className="w-2 h-2 rounded-full bg-pink-400 animate-pulse" />
+              الفعاليات القادمة
+            </div>
+            <h2 className="text-3xl md:text-5xl font-bold text-white mb-4">
+              أحداث <span className="bg-gradient-to-r from-pink-400 via-purple-400 to-emerald-400 bg-clip-text text-transparent">المملكة</span>
+            </h2>
+            <p className="text-white/40 text-lg max-w-xl mx-auto">أهم الفعاليات التقنية وريادة الأعمال في السعودية</p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {[
+              { month: 'مارس', day: '15', title: 'SaaS Summit Riyadh', location: 'الرياض', type: 'مؤتمر', color: 'from-pink-500 to-rose-500' },
+              { month: 'أبريل', day: '8', title: 'TechCrunch Disrupt', location: 'جدة', type: 'فعالية', color: 'from-purple-500 to-violet-500' },
+              { month: 'مايو', day: '22', title: 'Startup Grind KSA', location: 'الدمام', type: 'منتدى', color: 'from-emerald-500 to-teal-500' },
+              { month: 'يونيو', day: '5', title: 'Cloud Expo Saudi', location: 'الرياض', type: 'معرض', color: 'from-blue-500 to-cyan-500' },
+            ].map((event, i) => (
+              <div key={i} className="group relative p-6 rounded-2xl bg-white/[0.02] border border-white/8 backdrop-blur-sm hover:border-pink-500/30 transition-all duration-500 hover:scale-[1.02]">
+                <div className={`absolute inset-0 rounded-2xl bg-gradient-to-br ${event.color} opacity-0 group-hover:opacity-10 transition-opacity duration-500`} />
+
+                <div className="relative z-10 text-center">
+                  <div className={`inline-flex flex-col items-center justify-center w-16 h-16 rounded-2xl bg-gradient-to-br ${event.color} mb-4`}>
+                    <span className="text-white font-bold text-lg">{event.day}</span>
+                    <span className="text-white/80 text-xs">{event.month}</span>
+                  </div>
+
+                  <span className={`inline-block px-3 py-1 rounded-full text-xs bg-gradient-to-r ${event.color} text-white/90 mb-3`}>
+                    {event.type}
+                  </span>
+
+                  <h3 className="text-lg font-bold text-white mb-2 group-hover:text-pink-400 transition-colors">{event.title}</h3>
+                  <p className="text-white/50 text-sm flex items-center justify-center gap-1">
+                    <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                    </svg>
+                    {event.location}
+                  </p>
+
+                  <button className="mt-4 w-full py-2.5 rounded-xl bg-white/5 border border-white/10 text-white text-sm font-semibold hover:bg-pink-500 hover:border-pink-500 transition-all">
+                    تسجيل
+                  </button>
+                </div>
+
+                <div className={`absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r ${event.color} transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500`} />
+              </div>
+            ))}
+          </div>
+
+          <div className="text-center mt-12">
+            <Link href="/contact" className="inline-flex items-center gap-2 px-8 py-4 rounded-xl bg-gradient-to-r from-pink-500 to-purple-500 text-white font-bold hover:shadow-[0_0_30px_rgba(236,72,153,0.3)] transition-all">
+              أضف فعاليتك
+              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 4v16m8-8H4" />
+              </svg>
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* Company Directory Section */}
+      <section className="py-24 relative overflow-hidden bg-gradient-to-b from-[#0A0A14] to-[#12121F]">
+        <div className="absolute inset-0">
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full blur-[180px] opacity-10 bg-gradient-to-r from-cyan-500 to-blue-500" />
+        </div>
+
+        <div className="max-w-7xl mx-auto px-4 relative z-10">
+          <div className="text-center mb-16">
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-cyan-500/10 border border-cyan-500/20 text-cyan-400 text-sm mb-4">
+              <span className="w-2 h-2 rounded-full bg-cyan-400 animate-pulse" />
+              دليل الشركات
+            </div>
+            <h2 className="text-3xl md:text-5xl font-bold text-white mb-4">
+              أبرز شركات <span className="bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">SaaS</span> السعودية
+            </h2>
+            <p className="text-white/40 text-lg max-w-xl mx-auto">تعرف على أبرز شركات البرمجيات السحابية في المملكة</p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {[
+              { name: 'Monshaat', sector: 'ريادة الأعمال', employees: '500+', location: 'الرياض', logo: 'M', color: 'from-blue-500 to-cyan-500' },
+              { name: 'SaudiCloud', sector: 'سحابة', employees: '200+', location: 'الرياض', logo: 'SC', color: 'from-purple-500 to-pink-500' },
+              { name: 'Teal', sector: 'محاسبة', employees: '50+', location: 'جدة', logo: 'T', color: 'from-emerald-500 to-teal-500' },
+              { name: 'Salla', sector: 'تجارة إلكترونية', employees: '100+', location: 'الرياض', logo: 'S', color: 'from-orange-500 to-amber-500' },
+              { name: 'Madar', sector: 'تعليم', employees: '75+', location: 'الدمام', logo: 'M', color: 'from-violet-500 to-purple-500' },
+              { name: 'Bayt.com', sector: 'موارد بشرية', employees: '1000+', location: 'جدة', logo: 'B', color: 'from-red-500 to-pink-500' },
+            ].map((company, i) => (
+              <div key={i} className="group relative p-6 rounded-2xl bg-white/[0.02] border border-white/8 backdrop-blur-sm hover:border-cyan-500/30 transition-all duration-500 hover:scale-[1.02]">
+                <div className={`absolute inset-0 rounded-2xl bg-gradient-to-br ${company.color} opacity-0 group-hover:opacity-10 transition-opacity duration-500`} />
+
+                <div className="relative z-10 flex items-start gap-4">
+                  <div className={`w-14 h-14 rounded-xl bg-gradient-to-br ${company.color} flex items-center justify-center text-white font-bold text-lg shrink-0`}>
+                    {company.logo}
+                  </div>
+
+                  <div className="flex-1 min-w-0">
+                    <h3 className="text-lg font-bold text-white mb-1 group-hover:text-cyan-400 transition-colors">{company.name}</h3>
+                    <p className="text-white/50 text-sm mb-3">{company.sector}</p>
+
+                    <div className="flex items-center gap-4 text-white/40 text-xs">
+                      <span className="flex items-center gap-1">
+                        <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+                        </svg>
+                        {company.employees}
+                      </span>
+                      <span className="flex items-center gap-1">
+                        <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                        </svg>
+                        {company.location}
+                      </span>
+                    </div>
+                  </div>
+                </div>
+
+                <div className={`absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r ${company.color} transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500`} />
+              </div>
+            ))}
+          </div>
+
+          <div className="text-center mt-12">
+            <Link href="/contact" className="inline-flex items-center gap-2 px-8 py-4 rounded-xl bg-gradient-to-r from-cyan-500 to-blue-500 text-white font-bold hover:shadow-[0_0_30px_rgba(6,182,212,0.3)] transition-all">
+              أضف شركتك
+              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 4v16m8-8H4" />
+              </svg>
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* Company Directory Section */}
+      <section className="py-24 relative overflow-hidden bg-gradient-to-b from-[#0A0A14] via-[#12121F] to-[#0A0A14]">
+        <div className="absolute inset-0">
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full blur-[180px] opacity-10 bg-gradient-to-r from-cyan-500 to-blue-500" />
+        </div>
+
+        <div className="max-w-7xl mx-auto px-4 relative z-10">
+          <div className="text-center mb-16">
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-cyan-500/10 border border-cyan-500/20 text-cyan-400 text-sm mb-4">
+              <span className="w-2 h-2 rounded-full bg-cyan-400 animate-pulse" />
+              دليل الشركات
+            </div>
+            <h2 className="text-3xl md:text-5xl font-bold text-white mb-4">
+              أبرز شركات <span className="bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">SaaS</span> السعودية
+            </h2>
+            <p className="text-white/40 text-lg max-w-xl mx-auto">اكتشف أبرز شركات البرمجيات كخدمة في المملكة</p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {[
+              { name: 'URSey', category: 'Finance', description: 'منصة مالية متكاملة', location: 'الرياض', employees: '50-100', founded: '2021', color: 'from-cyan-500 to-blue-500' },
+              { name: 'Mawdoo3', category: 'EdTech', description: 'منصة تعليمية ذكية', location: 'الرياض', employees: '100-200', founded: '2017', color: 'from-blue-500 to-indigo-500' },
+              { name: 'Jahez', category: 'E-Commerce', description: 'توصيل الطعام والطلبات', location: 'جدة', employees: '200-500', founded: '2016', color: 'from-orange-500 to-red-500' },
+              { name: 'Sary', category: 'Logistics', description: 'خدمات لوجستية ذكية', location: 'الرياض', employees: '100-200', founded: '2019', color: 'from-green-500 to-emerald-500' },
+              { name: 'Momar', category: 'Retail', description: 'حلولRetail Store', location: 'الرياض', employees: '50-100', founded: '2020', color: 'from-purple-500 to-violet-500' },
+              { name: 'Tajawal', category: 'Travel', description: 'حجز فنادق وطيران', location: 'جدة', employees: '50-100', founded: '2016', color: 'from-pink-500 to-rose-500' },
+            ].map((company, i) => (
+              <div key={i} className="group relative p-6 rounded-2xl bg-white/[0.02] border border-white/8 backdrop-blur-sm hover:border-cyan-500/30 transition-all duration-500 hover:scale-[1.02]">
+                <div className={`absolute inset-0 rounded-2xl bg-gradient-to-br ${company.color} opacity-0 group-hover:opacity-10 transition-opacity duration-500`} />
+
+                <div className="relative z-10">
+                  <div className="flex items-center justify-between mb-4">
+                    <span className={`px-3 py-1 rounded-full text-xs bg-gradient-to-r ${company.color} text-white`}>{company.category}</span>
+                    <span className="text-white/40 text-xs">{company.founded}</span>
+                  </div>
+
+                  <h3 className="text-xl font-bold text-white mb-2 group-hover:text-cyan-400 transition-colors">{company.name}</h3>
+                  <p className="text-white/60 text-sm mb-4">{company.description}</p>
+
+                  <div className="flex items-center gap-4 text-white/40 text-sm mb-4">
+                    <span className="flex items-center gap-1">
+                      <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                      </svg>
+                      {company.location}
+                    </span>
+                    <span>{company.employees} موظف</span>
+                  </div>
+
+                  <button className="w-full py-3 rounded-xl bg-white/5 border border-white/10 text-white font-semibold hover:bg-cyan-500 hover:border-cyan-500 transition-all duration-300">
+                    اعرف أكثر
+                  </button>
+                </div>
+
+                <div className={`absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r ${company.color} transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500`} />
+              </div>
+            ))}
+          </div>
+
+          <div className="text-center mt-12">
+            <Link href="/contact" className="inline-flex items-center gap-2 px-8 py-4 rounded-xl bg-gradient-to-r from-cyan-500 to-blue-500 text-white font-bold hover:shadow-[0_0_30px_rgba(6,182,212,0.3)] transition-all">
+              أضف شركتك
+              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 4v16m8-8H4" />
+              </svg>
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* SaaS Calculators Section */}
+      <section className="py-24 relative overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-r from-emerald-500/5 via-purple-500/5 to-pink-500/5" />
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] rounded-full blur-[150px] opacity-10 bg-gradient-to-r from-emerald-500 via-purple-500 to-pink-500" />
+
+        <div className="max-w-7xl mx-auto px-4 relative z-10">
+          <div className="text-center mb-16">
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 text-sm mb-4">
+              <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
+              حاسبات SaaS
+            </div>
+            <h2 className="text-3xl md:text-5xl font-bold text-white mb-4">
+              احسب مؤشرات <span className="bg-gradient-to-r from-emerald-400 via-purple-400 to-pink-500 bg-clip-text text-transparent">أعمالك</span>
+            </h2>
+            <p className="text-white/40 text-lg max-w-xl mx-auto">أدوات مجانية لحساب أهم_metricس في مجال SaaS</p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {[
+              { title: 'حساب MRR', description: 'احسب الإيرادات الشهرية المتكررة', icon: '💰', color: 'from-emerald-500 to-green-500' },
+              { title: 'حساب churn Rate', description: 'احسب معدل فقدان العملاء', icon: '📉', color: 'from-red-500 to-orange-500' },
+              { title: 'حساب LTV', description: 'احسب قيمة العميلLifetime', icon: '👤', color: 'from-purple-500 to-violet-500' },
+              { title: 'حساب CAC', description: 'احسب تكلفة اكتساب العميل', icon: '🎯', color: 'from-blue-500 to-cyan-500' },
+              { title: 'حساب ROI', description: 'احسب العائد على الاستثمار', icon: '📈', color: 'from-pink-500 to-rose-500' },
+              { title: 'حساب Burn Rate', description: 'احسب معدل حرق التمويل', icon: '🔥', color: 'from-amber-500 to-orange-500' },
+            ].map((calc, i) => (
+              <div key={i} className="group relative p-6 rounded-2xl bg-white/[0.02] border border-white/8 backdrop-blur-sm hover:border-emerald-500/30 transition-all duration-500 hover:scale-[1.02]">
+                <div className={`absolute inset-0 rounded-2xl bg-gradient-to-br ${calc.color} opacity-0 group-hover:opacity-10 transition-opacity duration-500`} />
+
+                <div className="relative z-10 text-center">
+                  <div className={`inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-gradient-to-br ${calc.color} mb-4 text-3xl`}>
+                    {calc.icon}
+                  </div>
+
+                  <h3 className="text-lg font-bold text-white mb-2 group-hover:text-emerald-400 transition-colors">{calc.title}</h3>
+                  <p className="text-white/50 text-sm mb-4">{calc.description}</p>
+
+                  <button className="w-full py-3 rounded-xl bg-white/5 border border-white/10 text-white font-semibold hover:bg-emerald-500 hover:border-emerald-500 transition-all duration-300">
+                    احسب الآن
+                  </button>
+                </div>
+
+                <div className={`absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r ${calc.color} transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500`} />
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Data Visualizations Section */}
+      <section className="py-24 relative overflow-hidden bg-gradient-to-b from-[#0A0A14] via-[#0F0F1A] to-[#0A0A14]">
+        <div className="absolute inset-0">
+          <div className="absolute top-0 right-0 w-[500px] h-[500px] rounded-full blur-[180px] opacity-15 bg-gradient-to-r from-violet-500 to-purple-500" />
+          <div className="absolute bottom-0 left-0 w-[400px] h-[400px] rounded-full blur-[150px] opacity-15 bg-gradient-to-r from-pink-500 to-rose-500" />
+        </div>
+
+        <div className="max-w-7xl mx-auto px-4 relative z-10">
+          <div className="text-center mb-16">
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-violet-500/10 border border-violet-500/20 text-violet-400 text-sm mb-4">
+              <span className="w-2 h-2 rounded-full bg-violet-400 animate-pulse" />
+              إحصائيات السوق
+            </div>
+            <h2 className="text-3xl md:text-5xl font-bold text-white mb-4">
+              أرقام قطاع <span className="bg-gradient-to-r from-violet-400 to-pink-500 bg-clip-text text-transparent">SaaS</span> السعودي
+            </h2>
+            <p className="text-white/40 text-lg max-w-xl mx-auto">استعرض أهم الإحصائيات والبيانات</p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            {/* Market Size Chart */}
+            <div className="p-8 rounded-2xl bg-white/[0.02] border border-white/8 backdrop-blur-sm">
+              <h3 className="text-xl font-bold text-white mb-6">حجم السوق المتوقع (مليار $)</h3>
+              <div className="space-y-4">
+                {[
+                  { year: '2024', value: 2.1, percent: 32 },
+                  { year: '2025', value: 3.2, percent: 49 },
+                  { year: '2026', value: 4.5, percent: 69 },
+                  { year: '2027', value: 5.8, percent: 89 },
+                  { year: '2030', value: 6.49, percent: 100 },
+                ].map((item, i) => (
+                  <div key={i} className="group">
+                    <div className="flex items-center justify-between mb-2">
+                      <span className="text-white/70">{item.year}</span>
+                      <span className="text-emerald-400 font-bold">{item.value}B$</span>
+                    </div>
+                    <div className="h-3 bg-white/10 rounded-full overflow-hidden">
+                      <div
+                        className="h-full bg-gradient-to-r from-emerald-500 to-cyan-500 rounded-full transition-all duration-1000 group-hover:opacity-80"
+                        style={{ width: `${item.percent}%` }}
+                      />
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Company Distribution */}
+            <div className="p-8 rounded-2xl bg-white/[0.02] border border-white/8 backdrop-blur-sm">
+              <h3 className="text-xl font-bold text-white mb-6">توزيع الشركات حسب القطاع</h3>
+              <div className="space-y-4">
+                {[
+                  { sector: 'Finance', percent: 28, color: 'from-purple-500 to-violet-500' },
+                  { sector: 'Healthcare', percent: 22, color: 'from-pink-500 to-rose-500' },
+                  { sector: 'E-Commerce', percent: 18, color: 'from-blue-500 to-cyan-500' },
+                  { sector: 'Education', percent: 15, color: 'from-amber-500 to-orange-500' },
+                  { sector: 'Logistics', percent: 10, color: 'from-green-500 to-emerald-500' },
+                  { sector: 'Other', percent: 7, color: 'from-gray-500 to-slate-500' },
+                ].map((item, i) => (
+                  <div key={i} className="group">
+                    <div className="flex items-center justify-between mb-2">
+                      <span className="text-white/70">{item.sector}</span>
+                      <span className="text-purple-400 font-bold">{item.percent}%</span>
+                    </div>
+                    <div className="h-3 bg-white/10 rounded-full overflow-hidden">
+                      <div
+                        className={`h-full bg-gradient-to-r ${item.color} rounded-full transition-all duration-1000 group-hover:opacity-80`}
+                        style={{ width: `${item.percent}%` }}
+                      />
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Funding Stats */}
+            <div className="p-8 rounded-2xl bg-white/[0.02] border border-white/8 backdrop-blur-sm">
+              <h3 className="text-xl font-bold text-white mb-6">إجمالي التمويل (مليون $)</h3>
+              <div className="flex items-end justify-between h-48">
+                {[
+                  { year: '2021', value: 45 },
+                  { year: '2022', value: 120 },
+                  { year: '2023', value: 180 },
+                  { year: '2024', value: 95 },
+                  { year: '2025', value: 164 },
+                ].map((item, i) => (
+                  <div key={i} className="flex flex-col items-center flex-1 group">
+                    <div
+                      className="w-8 md:w-12 bg-gradient-to-t from-purple-500 to-pink-500 rounded-t-md transition-all duration-500 group-hover:from-purple-400 group-hover:to-pink-400"
+                      style={{ height: `${(item.value / 180) * 100}%` }}
+                    />
+                    <span className="text-white/50 text-xs mt-2">{item.year}</span>
+                    <span className="text-white/70 text-xs">{item.value}M</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Growth Rate */}
+            <div className="p-8 rounded-2xl bg-white/[0.02] border border-white/8 backdrop-blur-sm">
+              <h3 className="text-xl font-bold text-white mb-6">معدل النمو السنوي حسب المدينة</h3>
+              <div className="space-y-4">
+                {[
+                  { city: 'الرياض', rate: 16.2, color: 'from-emerald-500 to-cyan-500' },
+                  { city: 'جدة', rate: 14.8, color: 'from-blue-500 to-indigo-500' },
+                  { city: 'الدمام', rate: 12.5, color: 'from-purple-500 to-violet-500' },
+                  { city: 'مكة', rate: 10.2, color: 'from-pink-500 to-rose-500' },
+                ].map((item, i) => (
+                  <div key={i} className="group">
+                    <div className="flex items-center justify-between mb-2">
+                      <span className="text-white/70">{item.city}</span>
+                      <span className="text-emerald-400 font-bold">{item.rate}%</span>
+                    </div>
+                    <div className="h-3 bg-white/10 rounded-full overflow-hidden">
+                      <div
+                        className={`h-full bg-gradient-to-r ${item.color} rounded-full transition-all duration-1000 group-hover:opacity-80`}
+                        style={{ width: `${(item.rate / 20) * 100}%` }}
+                      />
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
     </>
   );
 }
