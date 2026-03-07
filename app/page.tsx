@@ -5,6 +5,14 @@ import { useEffect, useState, useRef } from 'react';
 import { articles as allArticles } from '../lib/articles-data';
 import { Newsletter } from '../components/Newsletter';
 
+const rotatingHeadlines = [
+  { title: 'سوق البرمجيات السحابية في المملكة — وين وصل؟', category: 'تقارير السوق' },
+  { title: 'لماذا تتسابق عمالقة التقنية للدخول إلى السوق السعودي؟', category: 'أخبار السوق' },
+  { title: 'أبرز شركات SaaS الناشئة في المملكة العربية السعودية 2026', category: 'شركات ناشئة' },
+  { title: 'نظام حماية البيانات الشخصية (PDPL) — ما يجب أن يعرفه كل مزوّد SaaS', category: 'امتثال' },
+  { title: 'كيف تطلق شركة SaaS ناجحة في السعودية؟', category: 'دليل عملي' },
+];
+
 interface Article {
   title: string;
   slug: string;
@@ -28,6 +36,24 @@ const categories = [
 
 function Hero() {
   const canvasRef = useRef<HTMLCanvasElement>(null);
+  const [currentHeadline, setCurrentHeadline] = useState(0);
+
+  // Rotate headlines
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentHeadline((prev) => (prev + 1) % rotatingHeadlines.length);
+    }, 4000);
+    return () => clearInterval(interval);
+  }, []);
+  const [currentHeadline, setCurrentHeadline] = useState(0);
+
+  // Rotate headlines every 4 seconds
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentHeadline((prev) => (prev + 1) % rotatingHeadlines.length);
+    }, 4000);
+    return () => clearInterval(interval);
+  }, []);
 
   useEffect(() => {
     const canvas = canvasRef.current;
@@ -121,12 +147,35 @@ function Hero() {
         </h1>
 
         {/* Tagline */}
-        <p className="text-xl md:text-2xl text-white/50 max-w-2xl mx-auto mb-10 font-light">
+        <p className="text-xl md:text-2xl text-white/50 max-w-2xl mx-auto mb-4 font-light">
           مصدرك الأول لأحدث أخبار التقنية والأعمال في المملكة العربية السعودية
         </p>
 
+        {/* Rotating Headlines */}
+        <div className="h-16 mb-10 flex items-center justify-center overflow-hidden">
+          {rotatingHeadlines.map((item, index) => (
+            <div
+              key={index}
+              className={`absolute transition-all duration-700 ease-in-out ${
+                index === currentHeadline
+                  ? 'opacity-100 translate-y-0'
+                  : 'opacity-0 translate-y-4'
+              }`}
+            >
+              <Link href="/articles" className="group">
+                <span className="inline-block px-4 py-1.5 rounded-full bg-emerald-500/20 border border-emerald-500/30 text-emerald-400 text-sm mb-2">
+                  {item.category}
+                </span>
+                <h2 className="text-2xl md:text-3xl font-bold text-white group-hover:text-emerald-400 transition-colors">
+                  {item.title}
+                </h2>
+              </Link>
+            </div>
+          ))}
+        </div>
+
         {/* CTA Buttons */}
-        <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-16">
+        <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-12">
           <Link href="/articles" className="group px-8 py-4.5 rounded-2xl bg-gradient-to-r from-emerald-500 to-emerald-400 text-[#0A0A14] font-bold text-lg hover:shadow-[0_0_40px_rgba(16,185,129,0.4)] transition-all duration-300 hover:scale-105">
             <span className="flex items-center gap-2">
               استكشف المقالات
