@@ -190,74 +190,34 @@ export default function Home() {
     <>
       <Hero />
 
-      {/* Stats Banner */}
-      <section className="py-12 bg-gradient-to-r from-emerald-500/10 via-purple-500/10 to-pink-500/10 border-y border-white/5">
+      {/* Latest Headlines Ticker */}
+      <section className="py-4 bg-gradient-to-r from-emerald-500/5 via-purple-500/5 to-pink-500/5 border-b border-white/5">
         <div className="max-w-6xl mx-auto px-4">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-            {[
-              { num: '$6.49B', label: 'حجم السوق المتوقع 2030' },
-              { num: '14.63%', label: 'معدل النمو السنوي' },
-              { num: '225+', label: 'شركة SaaS نشطة' },
-              { num: '$604M', label: 'تمويل تراكمي' },
-            ].map((stat, i) => (
-              <div key={i} className="text-center">
-                <div className="text-2xl md:text-3xl font-bold bg-gradient-to-r from-emerald-400 to-purple-400 bg-clip-text text-transparent">{stat.num}</div>
-                <div className="text-white/50 text-sm mt-1">{stat.label}</div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Latest Articles Ticker */}
-      <section className="py-6 bg-white/[0.02] border-y border-white/5 overflow-hidden">
-        <div className="max-w-6xl mx-auto px-4">
-          <div className="flex items-center gap-8">
-            <span className="shrink-0 px-4 py-2 rounded-full bg-emerald-500/20 border border-emerald-500/30 text-emerald-400 text-sm font-bold">
+          <div className="flex items-center gap-6 overflow-hidden h-12">
+            <span className="shrink-0 flex items-center gap-2 px-3 py-1.5 rounded-full bg-emerald-500/20 border border-emerald-500/40 text-emerald-400 text-xs font-bold">
+              <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
               جديد
             </span>
-            <div className="flex-1 overflow-hidden">
-              <div className="flex animate-marquee gap-8">
-                {rotatingHeadlines.map((item, index) => (
-                  <Link
-                    key={index}
-                    href="/articles"
-                    className="flex items-center gap-3 whitespace-nowrap group"
-                  >
-                    <span className="text-white/40 text-sm">{item.category}</span>
-                    <span className="text-white font-medium group-hover:text-emerald-400 transition-colors">
-                      {item.title}
-                    </span>
-                  </Link>
-                ))}
-              </div>
-            </div>
-            <Link href="/articles" className="shrink-0 text-emerald-400 hover:text-emerald-300 text-sm font-medium">
-              عرض الكل →
-            </Link>
-          </div>
-        </div>
-      </section>
-
-      {/* Latest Headlines Ticker */}
-      <section className="py-8 bg-white/[0.02] border-b border-white/5">
-        <div className="max-w-6xl mx-auto px-4">
-          <div className="flex items-center gap-4 overflow-hidden">
-            <span className="shrink-0 px-3 py-1 rounded-full bg-emerald-500/20 text-emerald-400 text-sm font-medium">جديد</span>
-            <div className="flex-1 relative h-10 overflow-hidden">
+            <div className="relative flex-1 overflow-hidden h-full">
               {rotatingHeadlines.map((item, index) => (
                 <Link
                   key={index}
                   href="/articles"
                   className={`absolute inset-0 flex items-center gap-3 transition-all duration-700 ease-in-out ${
-                    index === currentHeadline ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-full'
+                    index === currentHeadline ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-full'
                   }`}
                 >
-                  <span className="text-white/40 text-sm shrink-0">{item.category}</span>
-                  <span className="text-white hover:text-emerald-400 transition-colors truncate">{item.title}</span>
+                  <span className="text-white/30 text-sm shrink-0">{item.category}</span>
+                  <span className="text-white hover:text-emerald-400 transition-colors truncate font-medium">
+                    {item.title}
+                    <span className="text-white/30 mx-3">•</span>
+                  </span>
                 </Link>
               ))}
             </div>
+            <Link href="/articles" className="shrink-0 text-white/40 hover:text-emerald-400 text-sm transition-colors">
+              عرض الكل →
+            </Link>
           </div>
         </div>
       </section>
@@ -323,6 +283,63 @@ export default function Home() {
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
               </svg>
             </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* Saudi SaaS Market Stats */}
+      <section className="py-16 bg-gradient-to-b from-[#0A0A14] via-[#0F0F1A] to-[#0A0A14] relative overflow-hidden">
+        <div className="absolute inset-0">
+          <div className="absolute top-0 left-1/4 w-[400px] h-[400px] rounded-full blur-[150px] opacity-20 bg-gradient-to-r from-emerald-500 to-transparent" />
+          <div className="absolute bottom-0 right-1/4 w-[400px] h-[400px] rounded-full blur-[150px] opacity-20 bg-gradient-to-r from-purple-500 to-transparent" />
+        </div>
+        <div className="max-w-6xl mx-auto px-4 relative z-10">
+          <div className="text-center mb-10">
+            <h3 className="text-xl font-bold text-white/80">سوق SaaS السعودي في أرقام</h3>
+          </div>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+            {[
+              { num: '$6.49B', label: 'حجم السوق المتوقع 2030', color: 'from-emerald-400 to-cyan-400', icon: '📈' },
+              { num: '14.63%', label: 'معدل النمو السنوي', color: 'from-purple-400 to-pink-400', icon: '🚀' },
+              { num: '225+', label: 'شركة SaaS نشطة', color: 'from-blue-400 to-indigo-400', icon: '🏢' },
+              { num: '$604M', label: 'تمويل تراكمي', color: 'from-amber-400 to-orange-400', icon: '💰' },
+            ].map((stat, i) => (
+              <div key={i} className="group relative p-6 rounded-2xl bg-white/[0.03] border border-white/8 backdrop-blur-sm hover:border-white/20 transition-all hover:scale-105">
+                <div className={`absolute inset-0 rounded-2xl bg-gradient-to-br ${stat.color} opacity-0 group-hover:opacity-10 transition-opacity`} />
+                <div className="relative z-10 text-center">
+                  <div className="text-4xl mb-3">{stat.icon}</div>
+                  <div className={`text-3xl md:text-4xl font-bold bg-gradient-to-r ${stat.color} bg-clip-text text-transparent`}>{stat.num}</div>
+                  <div className="text-white/50 text-sm mt-2">{stat.label}</div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Market Insights Stats */}
+      <section className="py-16 bg-gradient-to-b from-[#0A0A14] to-[#0F0F1A]">
+        <div className="max-w-7xl mx-auto px-4">
+          <div className="text-center mb-10">
+            <h3 className="text-lg font-medium text-white/60">Saudi SaaS Market Insights 2026</h3>
+          </div>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+            {[
+              { num: '$6.49B', label: 'Market Size by 2030', color: 'from-emerald-400 to-cyan-400' },
+              { num: '14.63%', label: 'Annual Growth Rate', color: 'from-purple-400 to-pink-400' },
+              { num: '225+', label: 'Active SaaS Companies', color: 'from-blue-400 to-indigo-400' },
+              { num: '$604M', label: 'Cumulative Funding', color: 'from-amber-400 to-orange-400' },
+            ].map((stat, i) => (
+              <div key={i} className="group relative p-6 rounded-2xl bg-white/[0.03] border border-white/8 hover:border-white/20 transition-all">
+                <div className={`absolute inset-0 rounded-2xl bg-gradient-to-br ${stat.color} opacity-0 group-hover:opacity-10 transition-opacity`} />
+                <div className="relative text-center">
+                  <div className={`text-3xl md:text-4xl font-bold bg-gradient-to-r ${stat.color} bg-clip-text text-transparent mb-2`}>
+                    {stat.num}
+                  </div>
+                  <div className="text-white/50 text-sm">{stat.label}</div>
+                </div>
+              </div>
+            ))}
           </div>
         </div>
       </section>
