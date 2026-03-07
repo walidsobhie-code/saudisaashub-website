@@ -1,5 +1,4 @@
 import { additionalArticles } from './new-articles';
-import { detailedArticles } from './detailed-articles';
 
 export const articles = [
   {
@@ -411,11 +410,4 @@ export const articles = [
     readingTime: 5
   },
   ...additionalArticles,
-  ...detailedArticles,
-]
-
-  ...detailedArticles,
-]
-
-  ...detailedArticles,
 ]
