@@ -62,6 +62,11 @@ export async function generateMetadata({ params }: PageProps) {
       description: article.excerpt,
       images: [`https://saudisaashub.pages.dev/og-image.png`],
     },
+    other: {
+      'article:published_time': article.date,
+      'article:modified_time': article.date,
+      'article:author': 'SaudiSaaSHub Team',
+    },
     alternates: {
       canonical: articleUrl,
     },
