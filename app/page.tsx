@@ -399,9 +399,9 @@ export default function Home() {
                     {event.location}
                   </p>
 
-                  <button className="mt-4 w-full py-2.5 rounded-xl bg-white/5 border border-white/10 text-white text-sm font-semibold hover:bg-pink-500 hover:border-pink-500 transition-all">
+                  <Link href="/contact" className="mt-4 w-full py-2.5 rounded-xl bg-white/5 border border-white/10 text-white text-sm font-semibold hover:bg-pink-500 hover:border-pink-500 transition-all text-center block">
                     تسجيل
-                  </button>
+                  </Link>
                 </div>
 
                 <div className={`absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r ${event.color} transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500`} />
@@ -529,9 +529,9 @@ export default function Home() {
                   <h3 className="text-lg font-bold text-white mb-2 group-hover:text-emerald-400 transition-colors">{calc.title}</h3>
                   <p className="text-white/50 text-sm mb-4">{calc.description}</p>
 
-                  <button className="w-full py-3 rounded-xl bg-white/5 border border-white/10 text-white font-semibold hover:bg-emerald-500 hover:border-emerald-500 transition-all duration-300">
+                  <Link href="/contact" className="w-full py-3 rounded-xl bg-white/5 border border-white/10 text-white font-semibold hover:bg-emerald-500 hover:border-emerald-500 transition-all duration-300 text-center block">
                     احسب الآن
-                  </button>
+                  </Link>
                 </div>
 
                 <div className={`absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r ${calc.color} transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500`} />
