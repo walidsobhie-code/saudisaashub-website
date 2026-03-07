@@ -51,6 +51,7 @@ export const metadata: Metadata = {
     title: 'SaudiSaaSHub - مصدرك الأول لـ SaaS في المملكة',
     description: 'مصدرك الأول لأحدث أخبار وتقارير SaaS والشركات الناشئة في المملكة العربية السعودية.',
     creator: '@SaudiSaaSHub',
+    site: '@SaudiSaaSHub',
     images: ['https://saudisaashub.pages.dev/og-image.png'],
   },
   robots: {
