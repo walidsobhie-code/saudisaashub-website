@@ -372,10 +372,10 @@ export default function Home() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {[
-              { month: 'مارس', day: '15', title: 'SaaS Summit Riyadh', location: 'الرياض', type: 'مؤتمر', color: 'from-pink-500 to-rose-500' },
-              { month: 'أبريل', day: '8', title: 'TechCrunch Disrupt', location: 'جدة', type: 'فعالية', color: 'from-purple-500 to-violet-500' },
-              { month: 'مايو', day: '22', title: 'Startup Grind KSA', location: 'الدمام', type: 'منتدى', color: 'from-emerald-500 to-teal-500' },
-              { month: 'يونيو', day: '5', title: 'Cloud Expo Saudi', location: 'الرياض', type: 'معرض', color: 'from-blue-500 to-cyan-500' },
+              { id: 'saas-summit', month: 'مارس', day: '15', title: 'SaaS Summit Riyadh', location: 'الرياض', type: 'مؤتمر', color: 'from-pink-500 to-rose-500' },
+              { id: 'techcrunch', month: 'أبريل', day: '8', title: 'TechCrunch Disrupt', location: 'جدة', type: 'فعالية', color: 'from-purple-500 to-violet-500' },
+              { id: 'startup-grind', month: 'مايو', day: '22', title: 'Startup Grind KSA', location: 'الدمام', type: 'منتدى', color: 'from-emerald-500 to-teal-500' },
+              { id: 'cloud-expo', month: 'يونيو', day: '5', title: 'Cloud Expo Saudi', location: 'الرياض', type: 'معرض', color: 'from-blue-500 to-cyan-500' },
             ].map((event, i) => (
               <div key={i} className="group relative p-6 rounded-2xl bg-white/[0.02] border border-white/8 backdrop-blur-sm hover:border-pink-500/30 transition-all duration-500 hover:scale-[1.02]">
                 <div className={`absolute inset-0 rounded-2xl bg-gradient-to-br ${event.color} opacity-0 group-hover:opacity-10 transition-opacity duration-500`} />
@@ -399,7 +399,7 @@ export default function Home() {
                     {event.location}
                   </p>
 
-                  <Link href="/contact" className="mt-4 w-full py-2.5 rounded-xl bg-white/5 border border-white/10 text-white text-sm font-semibold hover:bg-pink-500 hover:border-pink-500 transition-all text-center block">
+                  <Link href={`/events?id=${event.id}`} className="mt-4 w-full py-2.5 rounded-xl bg-white/5 border border-white/10 text-white text-sm font-semibold hover:bg-pink-500 hover:border-pink-500 transition-all text-center block">
                     تسجيل
                   </Link>
                 </div>
@@ -440,12 +440,12 @@ export default function Home() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {[
-              { name: 'Monshaat', sector: 'ريادة الأعمال', employees: '500+', location: 'الرياض', logo: 'M', color: 'from-blue-500 to-cyan-500' },
-              { name: 'SaudiCloud', sector: 'سحابة', employees: '200+', location: 'الرياض', logo: 'SC', color: 'from-purple-500 to-pink-500' },
-              { name: 'Teal', sector: 'محاسبة', employees: '50+', location: 'جدة', logo: 'T', color: 'from-emerald-500 to-teal-500' },
-              { name: 'Salla', sector: 'تجارة إلكترونية', employees: '100+', location: 'الرياض', logo: 'S', color: 'from-orange-500 to-amber-500' },
-              { name: 'Madar', sector: 'تعليم', employees: '75+', location: 'الدمام', logo: 'M', color: 'from-violet-500 to-purple-500' },
-              { name: 'Bayt.com', sector: 'موارد بشرية', employees: '1000+', location: 'جدة', logo: 'B', color: 'from-red-500 to-pink-500' },
+              { name: 'Monshaat', sector: 'ريادة الأعمال', employees: '500+', location: 'الرياض', logo: 'M', color: 'from-blue-500 to-cyan-500', url: 'https://monshaat.gov.sa' },
+              { name: 'SaudiCloud', sector: 'سحابة', employees: '200+', location: 'الرياض', logo: 'SC', color: 'from-purple-500 to-pink-500', url: 'https://saudicloud.com' },
+              { name: 'Teal', sector: 'محاسبة', employees: '50+', location: 'جدة', logo: 'T', color: 'from-emerald-500 to-teal-500', url: 'https://teal.sa' },
+              { name: 'Salla', sector: 'تجارة إلكترونية', employees: '100+', location: 'الرياض', logo: 'S', color: 'from-orange-500 to-amber-500', url: 'https://salla.sa' },
+              { name: 'Madar', sector: 'تعليم', employees: '75+', location: 'الدمام', logo: 'M', color: 'from-violet-500 to-purple-500', url: 'https://madar.education' },
+              { name: 'Bayt.com', sector: 'موارد بشرية', employees: '1000+', location: 'جدة', logo: 'B', color: 'from-red-500 to-pink-500', url: 'https://bayt.com' },
             ].map((company, i) => (
               <div key={i} className="group relative p-6 rounded-2xl bg-white/[0.02] border border-white/8 backdrop-blur-sm hover:border-cyan-500/30 transition-all duration-500 hover:scale-[1.02]">
                 <div className={`absolute inset-0 rounded-2xl bg-gradient-to-br ${company.color} opacity-0 group-hover:opacity-10 transition-opacity duration-500`} />
@@ -474,6 +474,10 @@ export default function Home() {
                       </span>
                     </div>
                   </div>
+
+                  <a href={company.url} target="_blank" rel="noopener noreferrer" className="mt-4 w-full py-2.5 rounded-xl bg-white/5 border border-white/10 text-white text-sm font-semibold hover:bg-cyan-500 hover:border-cyan-500 transition-all text-center block">
+                    زر الموقع
+                  </a>
                 </div>
 
                 <div className={`absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r ${company.color} transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500`} />
@@ -511,12 +515,12 @@ export default function Home() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {[
-              { title: 'حساب MRR', description: 'احسب الإيرادات الشهرية المتكررة', icon: '💰', color: 'from-emerald-500 to-green-500' },
-              { title: 'حساب churn Rate', description: 'احسب معدل فقدان العملاء', icon: '📉', color: 'from-red-500 to-orange-500' },
-              { title: 'حساب LTV', description: 'احسب قيمة العميلLifetime', icon: '👤', color: 'from-purple-500 to-violet-500' },
-              { title: 'حساب CAC', description: 'احسب تكلفة اكتساب العميل', icon: '🎯', color: 'from-blue-500 to-cyan-500' },
-              { title: 'حساب ROI', description: 'احسب العائد على الاستثمار', icon: '📈', color: 'from-pink-500 to-rose-500' },
-              { title: 'حساب Burn Rate', description: 'احسب معدل حرق التمويل', icon: '🔥', color: 'from-amber-500 to-orange-500' },
+              { id: 'mrr', title: 'حساب MRR', description: 'احسب الإيرادات الشهرية المتكررة', icon: '💰', color: 'from-emerald-500 to-green-500' },
+              { id: 'churn', title: 'حساب churn Rate', description: 'احسب معدل فقدان العملاء', icon: '📉', color: 'from-red-500 to-orange-500' },
+              { id: 'ltv', title: 'حساب LTV', description: 'احسب قيمة العميلLifetime', icon: '👤', color: 'from-purple-500 to-violet-500' },
+              { id: 'cac', title: 'حساب CAC', description: 'احسب تكلفة اكتساب العميل', icon: '🎯', color: 'from-blue-500 to-cyan-500' },
+              { id: 'roi', title: 'حساب ROI', description: 'احسب العائد على الاستثمار', icon: '📈', color: 'from-pink-500 to-rose-500' },
+              { id: 'burn', title: 'حساب Burn Rate', description: 'احسب معدل حرق التمويل', icon: '🔥', color: 'from-amber-500 to-orange-500' },
             ].map((calc, i) => (
               <div key={i} className="group relative p-6 rounded-2xl bg-white/[0.02] border border-white/8 backdrop-blur-sm hover:border-emerald-500/30 transition-all duration-500 hover:scale-[1.02]">
                 <div className={`absolute inset-0 rounded-2xl bg-gradient-to-br ${calc.color} opacity-0 group-hover:opacity-10 transition-opacity duration-500`} />
@@ -529,7 +533,7 @@ export default function Home() {
                   <h3 className="text-lg font-bold text-white mb-2 group-hover:text-emerald-400 transition-colors">{calc.title}</h3>
                   <p className="text-white/50 text-sm mb-4">{calc.description}</p>
 
-                  <Link href="/contact" className="w-full py-3 rounded-xl bg-white/5 border border-white/10 text-white font-semibold hover:bg-emerald-500 hover:border-emerald-500 transition-all duration-300 text-center block">
+                  <Link href={`/calculators?type=${calc.id}`} className="w-full py-3 rounded-xl bg-white/5 border border-white/10 text-white font-semibold hover:bg-emerald-500 hover:border-emerald-500 transition-all duration-300 text-center block">
                     احسب الآن
                   </Link>
                 </div>
