@@ -174,8 +174,10 @@ function Hero() {
 }
 
 export default function Home() {
-  const articles = allArticles;
-  const featuredArticles = articles.slice(0, 6);
+  const sortedArticles = [...allArticles].sort((a, b) =>
+    new Date(b.date).getTime() - new Date(a.date).getTime()
+  );
+  const featuredArticles = sortedArticles.slice(0, 6);
   const [currentHeadline, setCurrentHeadline] = useState(0);
 
   // Rotate headlines
