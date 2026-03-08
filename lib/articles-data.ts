@@ -1,5 +1,4 @@
 import { additionalArticles } from './new-articles';
-import { additionalArticles } from './new-articles';
 
 export const articles = [
   {
@@ -410,7 +409,6 @@ export const articles = [
     author: "Saudi SaaS Hub Team",
     readingTime: 5
   },
-    {
     {
     title: "الذكاء الاصطناعي التوليدي في السعودية 2026: الدليل الشامل للشركات والمنشآت",
     slug: "-2026-",
